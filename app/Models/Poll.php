@@ -10,4 +10,9 @@ class Poll extends Model
     use HasFactory;
 
     protected $fillable = ['title'];
+
+    public function questions()
+    {
+        return $this->hasMany('App\Models\Question');
+    }
 }

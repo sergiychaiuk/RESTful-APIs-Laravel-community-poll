@@ -54,4 +54,10 @@ class PollsController extends Controller
     {
         return response()->json(['msg' => 'Payment is required.'],501);
     }
+
+    public function questions(Request $request, Poll $poll)
+    {
+        $questions = $poll->questions;
+        return response()->json($questions, 200);
+    }
 }
