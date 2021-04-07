@@ -44,6 +44,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\Logging::class,
             'httpHeaders:Come Work For US!',
+            \App\Http\Middleware\TokenAuth::class,
         ],
     ];
 
