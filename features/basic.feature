@@ -8,3 +8,17 @@ Feature: Sample Tests
         """
         When I request "GET /api/questions"
         Then the response is JSON
+        Then the response contains a question
+
+    Scenario: Add Questions
+        Given I have the payload:
+        """
+        {
+            "title": "Behat",
+            "question": "Is it awesome?",
+            "poll_id": 2
+        }
+        """
+        When I request "POST /api/questions"
+        Then the response is JSON
+        Then the questions contains a title of "Behat"
